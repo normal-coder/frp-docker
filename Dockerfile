@@ -1,6 +1,6 @@
 FROM alpine:3.8
 MAINTAINER docker <docker@gmail.com>
-ARG Frp_ver 0.29.0
+ARG Frp_ver=0.29.0
 ENV ALLOW_PORTS = "10000-10020"
 ENV TOKEN = 12345678
 ENV DASHBOARD_PWD = password
