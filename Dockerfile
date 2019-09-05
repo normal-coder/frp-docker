@@ -1,11 +1,12 @@
 FROM alpine:3.8
 MAINTAINER docker <docker@gmail.com>
 ARG Frp_ver=0.29.0
-ENV ALLOW_PORTS = "10000-10020"
-ENV TOKEN = 12345678
 ENV DASHBOARD_PWD = password
-ENV SUBDOMAIN_HOST = frps.com
+ENV TOKEN = 12345678
+ENV ALLOW_PORTS = "10000-10020"
 ENV MAX_POOL_COUNT = 10
+ENV SUBDOMAIN_HOST = frps.com
+
 
 
 RUN wget --no-check-certificate https://github.com/fatedier/frp/releases/download/v${Frp_ver}/frp_${Frp_ver}_linux_amd64.tar.gz && \
