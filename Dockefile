@@ -3,7 +3,9 @@ MAINTAINER docker <docker@gmail.com>
 ARG Frp_ver 0.29.0
 ENV ALLOW_PORTS = "10000-10020"
 ENV TOKEN = 12345678
+ENV DASHBOARD_PWD = password
 ENV SUBDOMAIN_HOST = frps.com
+ENV MAX_POOL_COUNT = 10
 
 
 RUN wget --no-check-certificate https://github.com/fatedier/frp/releases/download/v${Frp_ver}/frp_${Frp_ver}_linux_amd64.tar.gz && \
@@ -14,6 +16,7 @@ RUN wget --no-check-certificate https://github.com/fatedier/frp/releases/downloa
 
 RUN mkdir /var/frp/conf
 ADD frps.ini /var/frp/conf
+ADD 404.html /var/frp/conf
 
 WORKDIR /var/frp
 ENTRYPOINT ./frps -c conf/frps.ini
