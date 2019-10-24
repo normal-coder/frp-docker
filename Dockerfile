@@ -25,4 +25,6 @@ ADD server.crt /var/frp/conf
 ADD server.key /var/frp/conf
 
 WORKDIR /var/frp
-ENTRYPOINT ./frps -c conf/frps.ini && ./frpc -c conf/frpc.ini
+
+#ENTRYPOINT ./frps -c conf/frps.ini \&\& ./frpc -c conf/frpc.ini
+CMD sh -c '/frps -c conf/frps.ini && node ../frpc -c conf/frpc.ini'
