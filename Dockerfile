@@ -18,8 +18,11 @@ RUN wget --no-check-certificate https://github.com/fatedier/frp/releases/downloa
     rm -rf frp_${Frp_ver}_linux_amd64.tar.gz 
 
 RUN mkdir /var/frp/conf
+ADD frpc.ini /var/frp/conf
 ADD frps.ini /var/frp/conf
 ADD 404.html /var/frp/conf
+ADD server.wrt /var/frp/conf
+ADD server.key /var/frp/conf
 
 WORKDIR /var/frp
-ENTRYPOINT ./frps -c conf/frps.ini
+ENTRYPOINT ./frps -c conf/frps.ini && ./frpc -c conf/frpc.ini
