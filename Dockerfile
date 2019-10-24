@@ -24,7 +24,10 @@ ADD 404.html /var/frp/conf
 ADD server.crt /var/frp/conf
 ADD server.key /var/frp/conf
 
-WORKDIR /var/frp
+# WORKDIR /var/frp
 
-#ENTRYPOINT ./frps -c conf/frps.ini \&\& ./frpc -c conf/frpc.ini
-CMD sh -c '/frps -c conf/frps.ini && node ../frpc -c conf/frpc.ini'
+#ENTRYPOINT ./frps -c conf/frps.ini
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
