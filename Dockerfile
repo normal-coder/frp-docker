@@ -21,7 +21,7 @@ RUN mkdir /var/frp/conf
 ADD frpc.ini /var/frp/conf
 ADD frps.ini /var/frp/conf
 ADD 404.html /var/frp/conf
-ADD server.wrt /var/frp/conf
+ADD server.crt /var/frp/conf
 ADD server.key /var/frp/conf
 
 WORKDIR /var/frp
