@@ -9,8 +9,6 @@ ENV SUBDOMAIN_HOST frps.com
 ENV V_HTTP_PORT 80
 ENV V_HTTPS_PORT 443
 
-
-
 RUN wget --no-check-certificate https://github.com/fatedier/frp/releases/download/v${Frp_ver}/frp_${Frp_ver}_linux_amd64.tar.gz && \
     tar -zxf frp_${Frp_ver}_linux_amd64.tar.gz && \
     mkdir /var/frp && \
