@@ -12,6 +12,16 @@ Docker for frp
         -e TOKEN=12345678 \
         -e SUBDOMAIN_HOST=frps.com \
          lihaixin/frp
+
+
+     docker run -itd --name frps \
+        -p 10000-10020:10000-10020 \
+        -p 80:80/tcp -p 443:443/tcp \
+        -p 80:80/udp -p 443:443/udp \
+        -e DASHBOARD_PWD=password \
+        -e TOKEN=12345678 \
+        -e SUBDOMAIN_HOST=frps.com \
+         lihaixin/frp
          
  或者直接使用宿主机网络
  
