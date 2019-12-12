@@ -26,6 +26,7 @@ Docker for frp
  或者直接使用宿主机网络
  
      docker run -itd --name frps \
+        --net=host \
         -e DASHBOARD_PWD=password \
         -e TOKEN=12345678 \
         -e SUBDOMAIN_HOST=frps.com \
