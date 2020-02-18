@@ -9,7 +9,7 @@ Docker for frp
         -e DASHBOARD_PWD=password \
         -e TOKEN=12345678 \
         -e SUBDOMAIN_HOST=frps.com \
-         lihaixin/frp-docker
+         lihaixin/frp
          
  或者直接使用宿主机网络
  
@@ -21,7 +21,7 @@ Docker for frp
         -e FRP_PORT=443 \
         -e V_HTTP_PORT=80 \
         -e V_HTTPS_PORT=443 \
-         lihaixin/frp-docker
+         lihaixin/frp
 
 证书创建方法：
 
