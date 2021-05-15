@@ -16,4 +16,5 @@ if [ ! -f "/var/frp/conf/server.crt" ]; then
 fi
 
 /var/frp/frps -c /var/frp/conf/frps.ini &
+sleep 3
 /var/frp/frpc -c /var/frp/conf/frpc.ini
