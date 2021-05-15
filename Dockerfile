@@ -14,7 +14,7 @@ ENV TZ=Asia/Shanghai
 
 ARG Frp_ver=0.36.2
 
-RUN apk add --no-cache tzdata && \
+RUN apk add --no-cache tzdata ca-certificates openssl && \
     wget --no-check-certificate https://github.com/fatedier/frp/releases/download/v${Frp_ver}/frp_${Frp_ver}_linux_amd64.tar.gz && \
     tar -zxf frp_${Frp_ver}_linux_amd64.tar.gz && \
     mkdir /var/frp && \
