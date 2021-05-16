@@ -1,7 +1,7 @@
 FROM alpine:3.12
 MAINTAINER docker <docker@gmail.com>
 
-ENV SUBDOMAIN_HOST frp.youdomain.com
+ENV DOMAIN frp.youdomain.com
 ENV DASHBOARD_PWD password
 ENV TOKEN 12345678
 ENV ALLOW_PORTS 10000-10100
