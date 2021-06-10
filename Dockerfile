@@ -12,7 +12,7 @@ ENV V_HTTP_PORT 80
 ENV V_HTTPS_PORT 443
 ENV TZ=Asia/Shanghai
 
-ARG Frp_ver=0.36.2
+ARG Frp_ver=0.37.0
 
 RUN apk add --no-cache tzdata ca-certificates openssl && \
     wget --no-check-certificate https://github.com/fatedier/frp/releases/download/v${Frp_ver}/frp_${Frp_ver}_linux_amd64.tar.gz && \
