@@ -15,14 +15,13 @@ admin_pwd = admin
 
 ; 定义一个叫 ssh-services 的 SSH 隧道配置
 ; 本地 SSH 服务设定：127.0.0.1:22
-; 远程 SSH 入口：subdomain_ssh.example.com
+; 远程 SSH 入口：example.com
 ; 远程 SSH 端口：remote_port，对应 ALLOW_PORTS
 [ssh-services]
 type = tcp
 local_ip = 127.0.0.1
 local_port = 22
 remote_port = 10000
-custom_domains = subdomain_ssh.example.com:
 
 ; 定义一个叫 web-services 的 Web 隧道配置
 ; 本地服务设定：127.0.0.1:8080
