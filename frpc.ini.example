@@ -1,0 +1,36 @@
+; 服务域名：example.com
+; 服务端口：server_port 对应 FRP_PORT
+; 鉴权口令：TOKEN
+[common]
+server_addr = example.com
+server_port = 9443
+token = 88888888
+
+; 本地 Web 状态面板，访问入口：127.0.0.1:7400
+admin_addr = 127.0.0.1
+admin_port = 7400
+; 本地 Web 状态面板访问帐号密码
+admin_user = admin
+admin_pwd = admin
+
+; 定义一个叫 ssh-services 的 SSH 隧道配置
+; 本地 SSH 服务设定：127.0.0.1:22
+; 远程 SSH 入口：subdomain_ssh.example.com
+; 远程 SSH 端口：remote_port
+[ssh-services]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = 10000
+custom_domains = subdomain_ssh.example.com:
+
+; 定义一个叫 web-services 的 Web 隧道配置
+; 本地服务设定：127.0.0.1:8080
+; 远程 Web 入口：subdomain_web.example.com
+[web-services]
+type = http
+local_ip = 127.0.0.1
+local_port = 8080
+use_encryption = false
+use_compression = true
+custom_domains = subdomain_web.example.com
